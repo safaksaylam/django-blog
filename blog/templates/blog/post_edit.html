@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  <h1>Yeni gönderi</h1>
+  <form method="POST" class="post-form">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="save btn btn-default">Kaydet</button>
+  </form>
+{% else %}
+  <h1>Yetkiniz Yok!</h1>
+{% endif %}
+{% endblock %}

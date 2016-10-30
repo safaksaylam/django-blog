@@ -18,8 +18,11 @@
 </head>
 
 <body>
-    <div align="center" class="page-header">
+    <div class="page-header">
         <h1><a href="/">Blog</a></h1>
+        {% if user.is_authenticated %}
+          <div align="right"><a href="{% url 'post_new' %}" clas="top-menu"><span class="glyphicon glyphicon-plus"></span> Yeni Konu</a></div>
+        {% endif %}
     </div>
 
     <div class="content container">
